@@ -1,0 +1,18 @@
+Problem 1:
+
+Preorder tree traversal: A B D G H I E C F
+Root → Left → Right
+
+Breadth-first tree traversal: A B C D E F G H I
+From top to bottom and from left to right by levels：
+layer 1: A
+layer 2: B, C
+layer 3: D, E, F
+layer 4: G, H
+layer 5: I
+
+Postorder tree traversal: G I H D E B F C A
+Left → Right → Root
+
+Inorder tree traversal: G D H I B E A C F
+Left → Root → Right
