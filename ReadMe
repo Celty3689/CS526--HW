@@ -1,0 +1,62 @@
+CS526 Homework Assignment 5 - Problem 1
+Binary Search Tree Implementation
+
+DESCRIPTION:
+This program implements a Binary Search Tree (BST) with the following operations:
+- AddNode(value): Inserts a new node with the given value
+- DeleteNode(value): Deletes the node with the given value
+- FindNode(value): Searches for a node with the given value
+- PrintTree(): Displays the tree using in-order traversal
+
+ALGORITHMS:
+1. AddNode: Iterative insertion maintaining BST property (left < root < right)
+2. DeleteNode: Recursive deletion handling three cases:
+   - No children: Simply remove
+   - One child: Replace with child
+   - Two children: Find inorder successor, replace value, delete successor
+3. FindNode: Iterative search through the tree
+4. PrintTree: In-order traversal to display nodes in sorted order
+
+HOW TO RUN:
+1. Save the code as 'Problem 1.py'
+2. Run: python Problem 1.py
+3. The program will automatically:
+   - Generate random input (5-50 numbers between 1-1000)
+   - Print input set and initial tree
+   - Test AddNode with one new value
+   - Test DeleteNode with one existing value
+   - Test FindNode with both existing and non-existing values
+
+OUTPUT:
+- Input set of randomly generated numbers
+- BST after each operation (AddNode, DeleteNode)
+- FindNode results for positive and negative test cases
+
+
+
+CS526 Homework Assignment 5 - Problem 2
+Morse Code Vowel Combinations Counter
+DESCRIPTION:
+This program counts the number of possible vowel sequences that can be derived from a given Morse code sequence without letter separators.
+
+HOW TO RUN:
+1. Save the code as 'Problem 2.py'
+2. Run: python Problem 2.py
+
+
+CS526 Homework Assignment 5 - Problem 3
+Longest Alternating Increasing Sequence
+
+Algorithm: Split A and B into odd/even subarrays.
+For two pattern combinations (A_odd+B_even, A_even+B_odd),
+use greedy search to find the longest alternating increasing sequence
+from respective subarrays while maintaining relative order.
+
+HOW TO RUN:
+1. Save the code as 'Problem 3.py'
+2. Place all input files (longest_seq1.txt, longest_seq2.txt, etc.) in same directory
+3. Run: python Problem 3.py
+4. The program will read each file and display results
+
+I'm very sorry that I don't have the correct code for the third question.
+I've tried changing it many times but it still doesn't work.
