@@ -1,0 +1,98 @@
+Problem 1:
+Insertion Sort:
+Builds the sorted array one element at a time
+Takes each element and inserts it into its correct position
+
+Merge Sort:
+Divide and conquer algorithm
+Splits array in half, sorts each half, then merges them
+
+Quick Sort:
+Partition around a pivot element
+Elements smaller than pivot go left, larger go right
+
+PERFORMANCE:
+Small datasets (n < 50):
+Medium datasets (50-1000):
+Large datasets (n > 1000):
+
+HOW TO RUN:
+Run command: python Problem 1.py
+Program will:
+Create three test files (15, 50, 500 elements)
+Test all three sorting algorithms on each file
+Display original data and sorted results
+
+OUTPUT:
+Shows original input and sorted output for each algorithm.
+When the program is run again, the newly generated input file will overwrite the original input file.
+
+
+
+Problem 2:Radix Sort
+Radix Sort:
+Non-comparative sorting algorithm
+Sorts numbers by processing individual digits
+Uses counting sort as a subroutine for each digit
+Processes from least significant digit to most significant digit
+
+Radix Sort starts from the least significant digit (units place)
+and uses a stable counting sort to group and sort numbers based on the current digit position.
+It then progressively moves to higher digits (tens, hundreds, etc.).
+Each sorting round preserves the order from the previous round.
+Once all digit positions are processed, the numbers become fully sorted.
+This algorithm achieves non-comparative integer sorting through multiple stable digit-by-digit sorting passes.
+
+HOW TO RUN:
+Run: python radix_sort.py
+Program will:
+Create three test files (15, 50, 500 elements. As same as Problem 1.)
+Test radix sort on each dataset
+Display original input and sorted output
+
+OUTPUT:
+Shows original numbers and radix sorted results for three different dataset sizes.
+
+
+
+Problem 3:
+ALGORITHM DESCRIPTION:
+Gale-Shapley Stable Matching Algorithm:
+- Classical algorithm for solving stable marriage problem
+- Guarantees to find a stable matching where no two participants would prefer each other over their current partners
+- Produces male-optimal or female-optimal solutions based on implementation
+
+ALGORITHM FLOW:
+1. Initialization Phase:
+   - All men and women start as free (unmatched)
+   - Each man maintains a list of women in preference order
+   - Each woman maintains a preference ranking of all men
+
+2. Matching Loop:
+While there exists a free man who hasn't proposed to every woman:
+   Select a free man M
+   Let W be the highest-ranked woman in M's preference list whom he hasn't proposed to yet
+   If W is free:
+     M and W become engaged
+   Else (W is currently engaged to M'):
+     If W prefers M over M':
+         Break engagement between W and M' (M' becomes free)
+         M and W become engaged
+     Else:
+         M remains free
+   Mark that M has proposed to W
+
+3. Termination:
+Algorithm ends when all men are matched
+
+HOW TO RUN:
+Run command: Problem 3.py
+Program will:
+Read input from input file
+Parse preference lists
+Execute Gale-Shapley algorithm
+Display all stable matching pairs
+
+OUTPUT:
+Shows all input flies matching pairs in the format: Man ←→ Woman
+Each input file has an output file.
