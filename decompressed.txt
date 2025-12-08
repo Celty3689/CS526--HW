@@ -1,0 +1,8 @@
+Hello World! This is a test of Huffman coding.
+1234567890
+Special characters: !@#$%^&*()_+-=[]{}|;:,.<>?
+Multiple
+lines
+with
+different
+lengths.

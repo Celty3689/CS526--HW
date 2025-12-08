@@ -1,0 +1,78 @@
+Huffman Coding Implementation
+
+DESCRIPTION:
+This project implements the Huffman Encoding Algorithm as described in class.
+The implementation is divided into three parts:
+
+1. Huffman Encoder (encoder)
+   - Takes text as input
+   - Creates Huffman frequency map and tree
+   - Encodes the text
+   - Writes compressed file
+   - Prints: input set, frequency map, tree structure
+
+2. Huffman Decoder (decoder)
+   - Takes compressed file as input
+   - Reconstructs the original document
+   - Writes reconstructed file
+   - Prints: input set (compressed file info)
+
+FILES:
+1. Part 1.py   - Huffman encoding algorithm
+2. Part 2.py   - Huffman decoding algorithm
+3. README.txt          - This file
+
+TEST TEXT USED:
+The following text is used for testing (as provided in the assignment):
+
+Hello World! This is a test of Huffman coding.
+1234567890
+Special characters: !@#$%^&*()_+-=[]{}|;:,.<>?
+Multiple
+lines
+with
+different
+lengths.
+
+HOW TO RUN:
+Run Part 1 and then Run Part 2.
+
+ALGORITHM DETAILS:
+ENCODING ALGORITHM (encoder):
+1. Read input text
+2. Build frequency map (character -> count)
+3. Build Huffman tree using priority queue
+4. Generate Huffman codes from tree
+5. Encode text using generated codes
+6. Save to file with:
+   - Frequency map (for reconstruction)
+   - Padding information
+   - Encoded bits
+
+DECODING ALGORITHM (decoder):
+1. Read compressed file
+2. Extract frequency map
+3. Rebuild Huffman tree (same as encoder)
+4. Read encoded bits
+5. Remove padding
+6. Decode using Huffman tree
+7. Save reconstructed text
+
+FILE FORMAT (compressed.bin):
+[Frequency map in format: "ASCII:count,ASCII:count,..."]
+[Newline separator]
+[8-bit padding information]
+[Encoded bits (padded to multiple of 8)]
+
+EXAMPLE OUTPUT:
+When running Part 1 and Part 2, you will see:
+1. ENCODER OUTPUT:
+   - Input text (provided test content)
+   - Frequency map (each character with count)
+   - Huffman tree structure
+   - File creation message
+
+2. DECODER OUTPUT:
+   - Compressed file information
+   - Reconstruction status
+   - File creation message
