@@ -1,0 +1,86 @@
+CS526 Final Exam - Problem Solutions
+Problem 1: Dam Breaking
+ALGORITHM DESCRIPTION:
+Greedy Priority Queue Algorithm with Time Simulation**:
+- Simulates the dam repair process time unit by time unit
+- Uses a max heap to always fix the largest current crack first
+- Employs offset technique to efficiently handle crack growth without updating all elements
+- Maintains running total of unfixed crack sizes for O(1) water calculation
+
+ALGORITHM FLOW:
+1. Initialization Phase:
+   - Read number of cracks (n), flood threshold, and drainage rate
+   - Load all cracks with their appearance time and initial size
+   - Initialize max heap, water level tracking, and time counter
+
+2. Time Simulation Loop:
+   For each time unit until all cracks are processed:
+   a. Add New Cracks: Add all cracks that appear at current time to max heap
+   b. Fix Largest Crack: Remove and fix the largest crack from heap
+   c. Calculate Water: Water += (total unfixed crack sizes) - drainage
+      - Water never goes below zero
+   d. Update Maximum: Track highest water level reached
+   e. Check Flood: If water ≥ threshold, output FLOOD with time and water level
+   f. Grow Cracks: All remaining cracks increase by 1
+   g. Advance Time: Move to next time unit
+
+HOW TO RUN:
+Run python Problem 1.py
+
+1. Reads from the following input files:
+   - flood_1.txt (2 cracks, threshold 10, drain 3)
+   - flood_2.txt (3 cracks, threshold 11, drain 2)
+   - flood_3.txt (5 cracks, threshold 20, drain 4)
+   - flood_4.txt (4 cracks, threshold 50, drain 10)
+   - flood_5.txt (10 cracks, threshold 210, drain 5)
+   - flood_6.txt (1000 cracks, threshold 200000, drain 400)
+   - flood_7.txt (1000 cracks, threshold 1000000, drain 50)
+   - flood_11.txt (3 cracks with large time gaps)
+   - flood_12.txt (5 cracks all at time 0)
+
+2. Processes each file sequentially using the greedy algorithm
+3. Outputs results
+
+
+
+Problem 2: Downhill Skier
+ALGORITHM DESCRIPTION:
+- Finds the longest strictly decreasing path in an altitude matrix
+- Each move can be to any of 8 adjacent cells
+- Path must be strictly decreasing: each cell's altitude < previous cell's altitude
+- Uses memoization to avoid redundant computations
+
+ALGORITHM FLOW:
+1.Initialization Phase:
+   - Read matrix dimensions (m × n) and altitude values
+   - Initialize DP table for memoization
+   - Define 8 possible movement directions
+
+2.Recursion:
+   For each cell (i, j):
+   a. If result already memoized, return it
+   b. Otherwise, initialize path length to 1
+   c. Check all 8 neighbor cells:
+      - If neighbor is within bounds AND has lower altitude
+      - Recursively compute longest path from neighbor
+      - Update maximum path length: max(1 + dfs(neighbor))
+   d. Memoize and return result
+
+3.Global Search:
+   - Apply DFS to every cell in the matrix
+   - Track the maximum path length found
+
+4. Path Length Calculation:
+   - The algorithm computes number of nodes in the path
+   - Final answer = (maximum nodes - 1) to get the answer
+
+HOW TO RUN:
+Run python Problem 2.py
+
+Program will:
+1. Read input from two test files:
+   - ski_input1.txt (4×5 matrix)
+   - ski_input2.txt (8×8 matrix)
+2. Parse matrix dimensions and altitude values
+3. Execute the algorithm
+4. Display the longest downhill path length
